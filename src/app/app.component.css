@@ -1,0 +1,10 @@
+.mat-toolbar a.active {
+    background-color: #007bff; /* Set your desired background color */
+    color: #fff; /* Set your desired text color */
+}
+
+.mat-toolbar{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}

@@ -1,0 +1,39 @@
+<mat-card></mat-card>
+
+<mat-card-header class="modal-header">
+  <h2 mat-dialog-title>{{ data.id ? 'Edit Task' : 'Add Task' }}</h2>
+</mat-card-header>
+<div mat-dialog-content>
+  <form [formGroup]="createTask">
+
+    <div class="input-field">
+      <label for="name">First Name :</label>
+      <mat-form-field appearance="outline">
+        <input type="text" matInput id="name" name="name" formControlName="name" />
+      </mat-form-field>
+    </div>
+
+    <div class="input-field">
+      <label for="description">Description :</label>
+      <mat-form-field appearance="outline">
+        <textarea matInput id="description" name="description" formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+
+
+    <div class="input-field">
+      <label for="dueDate">Due Date:</label>
+      <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="dueDatePicker" id="dueDate" name="dueDate" formControlName="dueDate">
+        <mat-datepicker-toggle matSuffix [for]="dueDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #dueDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button color="primary" (click)="onSubmit(createTask)" [disabled]="!createTask.valid">
+    Submit
+  </button>
+  <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+</div>
