@@ -4,6 +4,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/tasklist', pathMatch: 'full' },
   {path:'tasklist',component:TaskListComponent},
   {path:'showchart',component:ChartComponent},
 ];
